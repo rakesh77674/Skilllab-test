@@ -9,77 +9,69 @@
   </head>
   <body>
     
-	<div class="container">
-	<h2>Select the modules</h2>
-	<form>
-        <div class="form-group">
-            <label for="exampleInputEmail1">LectureName</label>
-            <input type="name" class="form-control" id="lecturename"  placeholder="lecturename">
-        </div>
-        <div class="form-group">
-        <label for="exampleInputEmail1">Gender</label>
-        <select id="state" class="form-control" >
-			<option value="">Male</option>
-            <option value="">FeMale</option>
-            <option value="">Others</option>
-		</select>
+    <div class="container">
+        <h2>Select the modules</h2>
+            <form>
+              <div class="form-group">
+                    <label for="exampleInputEmail1">LectureName</label>
+                    <input type="name" class="form-control" id="lecturename"  placeholder="lecturename">
+                </div>
+                <div class="form-group">
+                   <label for="exampleInputEmail1">Gender</label>
+                    <select id="state" class="form-control" >
+                    <option value="">Male</option>
+                    <option value="">FeMale</option>
+                    <option value="">Others</option>
+                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">LectureName</label>
+                    <input type="name" class="form-control" id="lecturename"  placeholder="lecturename">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPhone">Phone</label>
+                    <input type="number" class="form-control" id="phone"  placeholder="Enter phone">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputAddress">Address</label>
+                    <input type="name" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                       <label for="exampleInputEmail1">Nationalitiy</label>
+                        <select id="state" class="form-control" >
+                        <option value="">Nepali</option>
+                        <option value="">English</option>
+                        <option value="">Hindi</option>
+                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="birthday">DOB:</label>
+                    <input type="date" id="dob" name="dob">
+                </div>  
+                <div class="form-group">
+                    <select id="faculty" class="form-control" >
+                    <option value="">Select Faculty</option>
+                     @foreach($data as $data)
+                    <option value="{{ $data->faculty}}">{{ $data->faculty}}</option>
+                     @endforeach
+                     </select>
+                     <br/>
+                     <select id="modules" class="form-control" >
+                     <option value="">Select modules</option>
+                     </select>
+                     <br/>
+                </div>
+            </form>
+            <button type="submit" class="btn btn-primary">Submit</button>
     </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">LectureName</label>
-            <input type="name" class="form-control" id="lecturename"  placeholder="lecturename">
-          </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            
-          </div>
-        <div class="form-group">
-            <label for="exampleInputPhone">Phone</label>
-            <input type="number" class="form-control" id="phone"  placeholder="Enter phone">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputAddress">Address</label>
-            <input type="name" class="form-control" id="exampleInputPassword1" placeholder="Password">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Nationalitiy</label>
-            <select id="state" class="form-control" >
-                <option value="">Nepali</option>
-                <option value="">English</option>
-                <option value="">Hindi</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="birthday">DOB:</label>
-           <input type="date" id="dob" name="dob">
-        </div>
-          <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-          </div>
-         
-
-		<div class="form-group">
-		<select id="country" class="form-control" >
-			<option value="">Select Faculty</option>
-			{{-- @foreach($country as $list) --}}
-				<option value=""></option>
-			{{-- @endforeach --}}
-		</select>
-		
-		<br/>
-		<select id="state" class="form-control" >
-			<option value="">Select modules</option>
-		</select>
-		<br/>
-		</div>
-	  </form>
-      <button type="submit" class="btn btn-primary">Submit</button>
-	</div>
-    {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
 
-        <script>
+        {{-- <script>
             jQuery(document).ready(function(){
                 jQuery('#country').change(function(){
                     let cid=jQuery(this).val();
@@ -108,6 +100,8 @@
                 
             });
                 
-            </script> --}}
+            </script>  --}}
+
+
 </body>
 </html>
