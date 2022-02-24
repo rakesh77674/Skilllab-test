@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Skill lab test</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
   </head>
   <body>
     
@@ -18,15 +20,11 @@
                 </div>
                 <div class="form-group">
                    <label for="exampleInputEmail1">Gender</label>
-                    <select id="state" class="form-control" >
+                    <select id="gender" class="form-control" >
                     <option value="">Male</option>
                     <option value="">FeMale</option>
                     <option value="">Others</option>
                      </select>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">LectureName</label>
-                    <input type="name" class="form-control" id="lecturename"  placeholder="lecturename">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>
@@ -42,7 +40,7 @@
                 </div>
                 <div class="form-group">
                        <label for="exampleInputEmail1">Nationalitiy</label>
-                        <select id="state" class="form-control" >
+                        <select id="nationality" class="form-control" >
                         <option value="">Nepali</option>
                         <option value="">English</option>
                         <option value="">Hindi</option>
@@ -53,55 +51,37 @@
                     <input type="date" id="dob" name="dob">
                 </div>  
                 <div class="form-group">
+                    <label for="Faculty">Faculty</label>
                     <select id="faculty" class="form-control" >
                     <option value="">Select Faculty</option>
                      @foreach($data as $data)
-                    <option value="{{ $data->faculty}}">{{ $data->faculty}}</option>
+                    <option value="{{ $data->id}}">{{ $data->faculty}}</option>
                      @endforeach
                      </select>
                      <br/>
-                     <select id="modules" class="form-control" >
-                     <option value="">Select modules</option>
+                     <select id="module" class="form-control" >
+                        <option value="">Select Module</option>
                      </select>
                      <br/>
                 </div>
             </form>
             <button type="submit" class="btn btn-primary">Submit</button>
     </div>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
-
-        {{-- <script>
+        <script>
             jQuery(document).ready(function(){
-                jQuery('#country').change(function(){
-                    let cid=jQuery(this).val();
-                    jQuery('#city').html('<option value="">Select City</option>')
-                    jQuery.ajax({
-                        url:'/getState',
-                        type:'post',
-                        data:'cid='+cid+'&_token={{csrf_token()}}',
-                        success:function(result){
-                            jQuery('#state').html(result)
+              jQuery('#faculty').change(function(){
+                     let cid=jQuery(this).val();
+                     jQuery('#module').html('<option value="">Select Module</option>')
+                     jQuery.ajax({
+                        url:'/getmodule',
+                         type:'post',
+                         data:'cid='+cid+'&_token={{csrf_token()}}',
+                         success:function(result){
+                             jQuery('#module').html(result);
                         }
+                      });
                     });
-                });
-                
-                jQuery('#state').change(function(){
-                    let sid=jQuery(this).val();
-                    jQuery.ajax({
-                        url:'/getCity',
-                        type:'post',
-                        data:'sid='+sid+'&_token={{csrf_token()}}',
-                        success:function(result){
-                            jQuery('#city').html(result)
-                        }
-                    });
-                });
-                
-            });
-                
-            </script>  --}}
-
-
+                });    
+        </script> 
 </body>
 </html>

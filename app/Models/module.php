@@ -9,8 +9,8 @@ class module extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'module',
+      'module',
+      'faculties_id',
         
-
  ];
 }

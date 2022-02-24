@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\http\Controllers\indexcontroller;
+use App\http\Controllers\Indexcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +15,5 @@ use App\http\Controllers\indexcontroller;
 */
 
 
-Route::get('/',[indexcontroller::class, "index"])->name('/');
+Route::get('/',[Indexcontroller::class, "index"])->name('/');
+Route::post('/getmodule',[Indexcontroller::class, "getmodule"])->name('/getmodule');
