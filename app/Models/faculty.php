@@ -10,7 +10,7 @@ class faculty extends Model
     use HasFactory;
     protected $fillable = [
         'faculty',
-        'modules_id',
+    
 
  ];
 }
