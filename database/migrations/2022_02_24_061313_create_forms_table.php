@@ -22,9 +22,8 @@ return new class extends Migration
             $table->string('Address')->unique();
             $table->string('Nationality')->unique();
             $table->string('DOB')->unique();
-            $table->string('Faculty')->unique();
-            $table->unsignedBigInteger("user_id");
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreignid('faculties_id');
+            $table->foreignid('modules_id');
             $table->timestamps();
         });
     }
