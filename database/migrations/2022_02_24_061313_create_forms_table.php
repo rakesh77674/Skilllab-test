@@ -15,6 +15,16 @@ return new class extends Migration
     {
         Schema::create('forms', function (Blueprint $table) {
             $table->id();
+            $table->string('LectureName')->unique();
+            $table->string('Gender')->unique();
+            $table->string('phone')->unique();
+            $table->string('email')->unique();
+            $table->string('Address')->unique();
+            $table->string('Nationality')->unique();
+            $table->string('DOB')->unique();
+            $table->string('Faculty')->unique();
+            $table->unsignedBigInteger("user_id");
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
