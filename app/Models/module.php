@@ -10,7 +10,7 @@ class module extends Model
     use HasFactory;
     protected $fillable = [
         'module',
-        'form_id',
+        
 
  ];
 }
