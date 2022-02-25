@@ -9,14 +9,14 @@ class form extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'faculty_id',
-        'module_id',
-        'LectureName',
+         'LectureName',
          'Gender',
          'phone',
          'email',
          'Address',
          'Nationality',
          'DOB',
+         'faculties_id',
+         'modules_id',
     ];
 }

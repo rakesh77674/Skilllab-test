@@ -9,63 +9,68 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
   </head>
-  <body>
+  <body style="background:#e8e8e8">
     
     <div class="container">
-        <h2>Select the modules</h2>
-            <form>
+        <h2>Fill The Form</h2>
+            <form method ="POST" action="{{url('addmodule')}}">
+                @csrf
               <div class="form-group">
                     <label for="exampleInputEmail1">LectureName</label>
-                    <input type="name" class="form-control" id="lecturename"  placeholder="lecturename">
+                    <input type="text" name = "LectureName" class="form-control" id="Lecturename"  placeholder="lecturename">
                 </div>
                 <div class="form-group">
-                   <label for="exampleInputEmail1">Gender</label>
-                    <select id="gender" class="form-control" >
-                    <option value="">Male</option>
-                    <option value="">FeMale</option>
-                    <option value="">Others</option>
+                   <label for="exampleInputGender">Gender</label>
+                    <select id="gender" name = "Gender" class="form-control" >
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="Others">Others</option>
                      </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <label for="exampleInputPhone">Phone</label>
+                    <input type="number" name = "phone" class="form-control" id="phone"  placeholder="Enter phone">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPhone">Phone</label>
-                    <input type="number" class="form-control" id="phone"  placeholder="Enter phone">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" name = "email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
+                
                 <div class="form-group">
                     <label for="exampleInputAddress">Address</label>
-                    <input type="name" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="name" class="form-control" name = "Address" id="exampleInputPassword1" placeholder="Password">
                 </div>
                 <div class="form-group">
-                       <label for="exampleInputEmail1">Nationalitiy</label>
-                        <select id="nationality" class="form-control" >
-                        <option value="">Nepali</option>
-                        <option value="">English</option>
-                        <option value="">Hindi</option>
+                       <label for="exampleInputNationality">Nationalitiy</label>
+                        <select id="nationality" name = "Nationality" class="form-control" >
+                        <option value="nepali">Nepali</option>
+                        <option value="English">English</option>
+                        <option value="Hindi">Hindi</option>
                      </select>
                 </div>
                 <div class="form-group">
                     <label for="birthday">DOB:</label>
-                    <input type="date" id="dob" name="dob">
+                    <input type="date" id="dob" name="DOB">
                 </div>  
                 <div class="form-group">
                     <label for="Faculty">Faculty</label>
-                    <select id="faculty" class="form-control" >
+                    <select id="faculty" name ="faculties_id" class="form-control" >
                     <option value="">Select Faculty</option>
                      @foreach($data as $data)
                     <option value="{{ $data->id}}">{{ $data->faculty}}</option>
                      @endforeach
+
                      </select>
                      <br/>
-                     <select id="module" class="form-control" >
+                     <label for="Faculty">Module</label>
+                     <select id="module" name= "modules_id" class="form-control" >
                         <option value="">Select Module</option>
                      </select>
                      <br/>
                 </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            
     </div>
         <script>
             jQuery(document).ready(function(){
@@ -73,7 +78,7 @@
                      let cid=jQuery(this).val();
                      jQuery('#module').html('<option value="">Select Module</option>')
                      jQuery.ajax({
-                        url:'/getmodule',
+                        url:'/getmodule',//url given in request
                          type:'post',
                          data:'cid='+cid+'&_token={{csrf_token()}}',
                          success:function(result){

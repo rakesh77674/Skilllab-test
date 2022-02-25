@@ -17,3 +17,4 @@ use App\http\Controllers\Indexcontroller;
 
 Route::get('/',[Indexcontroller::class, "index"])->name('/');
 Route::post('/getmodule',[Indexcontroller::class, "getmodule"])->name('/getmodule');
+Route::post('/addmodule',[Indexcontroller::class, "addmodule"])->name('/addmodule');
