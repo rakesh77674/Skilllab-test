@@ -23,6 +23,18 @@ class Indexcontroller extends Controller
 		return $html;
     }
     public function addmodule(Request $request){
+        request()->validate([
+            'LectureName'=> 'required', // max 10000kb,
+            'Gender'=>'required',
+            'phone'=> 'required',
+            'email'=>'required',
+            'Address'=>'required',
+            'Nationality'=>'required',
+            'DOB'=>'required',
+            'faculties_id'=>'required',
+            'modules_id'=>'required',
+
+        ]);
          Form::create($request->all());
         return redirect("/");
     }

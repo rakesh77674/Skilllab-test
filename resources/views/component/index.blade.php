@@ -17,7 +17,7 @@
                 @csrf
               <div class="form-group">
                     <label for="exampleInputEmail1">LectureName</label>
-                    <input type="text" name = "LectureName" class="form-control" id="Lecturename"  placeholder="lecturename">
+                    <input type="text" name = "LectureName" class="form-control" id="Lecturename"  placeholder="lecturename" required>
                 </div>
                 <div class="form-group">
                    <label for="exampleInputGender">Gender</label>
@@ -29,20 +29,20 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPhone">Phone</label>
-                    <input type="number" name = "phone" class="form-control" id="phone"  placeholder="Enter phone">
+                    <input type="number" name = "phone" class="form-control" id="phone"  placeholder="Enter phone" required>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>
-                    <input type="email" name = "email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input type="email" name = "email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="exampleInputAddress">Address</label>
-                    <input type="name" class="form-control" name = "Address" id="exampleInputPassword1" placeholder="Password">
+                    <input type="name" class="form-control" name = "Address" id="exampleInputPassword1" placeholder="Password" required>
                 </div>
                 <div class="form-group">
                        <label for="exampleInputNationality">Nationalitiy</label>
-                        <select id="nationality" name = "Nationality" class="form-control" >
+                        <select id="nationality" name = "Nationality" class="form-control" required>
                         <option value="nepali">Nepali</option>
                         <option value="English">English</option>
                         <option value="Hindi">Hindi</option>
@@ -50,11 +50,11 @@
                 </div>
                 <div class="form-group">
                     <label for="birthday">DOB:</label>
-                    <input type="date" id="dob" name="DOB">
+                    <input type="date" id="dob" name="DOB" required>
                 </div>  
                 <div class="form-group">
                     <label for="Faculty">Faculty</label>
-                    <select id="faculty" name ="faculties_id" class="form-control" >
+                    <select id="faculty" name ="faculties_id" class="form-control" required>
                     <option value="">Select Faculty</option>
                      @foreach($data as $data)
                     <option value="{{ $data->id}}">{{ $data->faculty}}</option>
@@ -63,7 +63,7 @@
                      </select>
                      <br/>
                      <label for="Faculty">Module</label>
-                     <select id="module" name= "modules_id" class="form-control" >
+                     <select id="module" name= "modules_id" class="form-control" required>
                         <option value="">Select Module</option>
                      </select>
                      <br/>
