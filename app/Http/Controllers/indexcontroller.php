@@ -24,7 +24,7 @@ class Indexcontroller extends Controller
     }
     public function addmodule(Request $request){
         request()->validate([
-            'LectureName'=> 'required', // max 10000kb,
+            'LectureName'=> 'required',
             'Gender'=>'required',
             'phone'=> 'required',
             'email'=>'required',

@@ -14,8 +14,8 @@
     <div class="container">
         <h2>Fill The Form</h2>
             <form method ="POST" action="{{url('addmodule')}}">
-                @csrf
-              <div class="form-group">
+              @csrf
+                <div class="form-group">
                     <label for="exampleInputEmail1">LectureName</label>
                     <input type="text" name = "LectureName" class="form-control" id="Lecturename"  placeholder="lecturename" required>
                 </div>
@@ -35,7 +35,6 @@
                     <label for="exampleInputEmail1">Email</label>
                     <input type="email" name = "email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
                 </div>
-                
                 <div class="form-group">
                     <label for="exampleInputAddress">Address</label>
                     <input type="name" class="form-control" name = "Address" id="exampleInputPassword1" placeholder="Password" required>
@@ -55,12 +54,12 @@
                 <div class="form-group">
                     <label for="Faculty">Faculty</label>
                     <select id="faculty" name ="faculties_id" class="form-control" required>
-                    <option value="">Select Faculty</option>
-                     @foreach($data as $data)
-                    <option value="{{ $data->id}}">{{ $data->faculty}}</option>
-                     @endforeach
+                        <option value="">Select Faculty</option>
+                         @foreach($data as $data)
+                         <option value="{{ $data->id}}">{{ $data->faculty}}</option>
+                          @endforeach
 
-                     </select>
+                    </select>
                      <br/>
                      <label for="Faculty">Module</label>
                      <select id="module" name= "modules_id" class="form-control" required>
